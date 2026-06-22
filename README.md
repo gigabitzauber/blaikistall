@@ -25,28 +25,32 @@ Custom GitHub Copilot agents and instructions designed to support Test-Driven De
 
 This repository contains specialized agent configurations and instructions that extend GitHub Copilot's capabilities for TDD practitioners. The agents provide all necessary actions to follow the TDD cycle, implement things and perform reviews.
 
-#### Contents
+#### Agent Configurations
+
+These files must be copied to .github/agents/ to be used by GitHub copilot.
 
 Although the agents can be used on their own, they are designed to work together to provide a full featured TDD experience. The agents are technology agnostic, i. e. you can use them to develop a Java project as well as one based on TypeScript.
 
 Technology specific rules are supposed to go into you copilot-instructions file. This repo provides instruction files for various technologies.
 
-The instruction files reference the ground rules file (`gtdda_general_ground_rules.md`). It should be located inside the .gtdda directory.
+The instruction files reference the ground rules file (`blaikistall_ground_rules.md`). It should be located inside the .blaikistall directory.
 
-* **TDD Developer** (`agents/gtdda_tdd_developer.agent.md`) - Specialized agent for test-driven development workflows
-* **Senior Software Engineer** (`agents/gtdda_senior_software_engineer.agent.md`) - Agent for architectural and design decisions
+* **TDD Developer** (`agents/copilot/blaikistall_agent_copilot_tdd_developer.agent.md`) - Specialized agent for test-driven development workflows
+* **Senior Software Engineer** (`agents/copilot/blaikistall_agent_copilot_software_engineer.agent.md`) - Agent for architectural and design decisions
   * This agent can also be used standalone to perform any kind of implementation tasks.
-* **Code Review** (`agents/gtdda_code_review.agent.md`) - Agent for code quality and review guidance
+* **Code Review** (`agents/copilot/blaikistall_agent_copilot_code_review.agent.md`) - Agent for code quality and review guidance
   * This agent may be used standalone. Just prompt "review" to perform a full review.
 
 #### Instructions
 
-* **TypeScript CLI Instructions** (`instructions/gttda_copilot-instructions_ts_cli.md`) - TypeScript-specific CLI development guidelines.
-* **Java Spring Boot CLI Instructions** (`instructions/gtdda_copilot-instructions_java_sb_cli.md`) - Java-Spring-Boot-specific CLI development guidelines.
+One of these files must be copied to .github/copilot-instructions.md to be used by the agents. The instructions files reference the ground rules file (`blaikistall_ground_rules.md`). It should be located inside the .blaikistall directory.
+
+* **TypeScript CLI Instructions** (`instructions/copilot/blaikistall_instructions_copilot_ts_cli.md`) - TypeScript-specific CLI development guidelines.
+* **Java Spring Boot CLI Instructions** (`instructions/copilot/blaikistall_instructions_copilot_java_sb_cli.md`) - Java-Spring-Boot-specific CLI development guidelines.
 
 #### Usage
 
-Agents make use of [GitHub copilot's handoff feature](https://code.visualstudio.com/docs/copilot/customization/custom-agents#_custom-agent-file-structure) and communicate with one another by the help of dynamically created files in the .gtdda folder.
+Agents make use of [GitHub copilot's handoff feature](https://code.visualstudio.com/docs/copilot/customization/custom-agents#_custom-agent-file-structure) and communicate with one another by the help of dynamically created files in the .blaikistall folder.
 
 * **review.md**
   * Contains results of the review agent and can be used to feed prompts into the developer agent.
@@ -87,7 +91,7 @@ The input must never exceed 359999 (99:59:59)
 
 #### How to
 
-1. Create a 'plan.md' file in `<project_root>/.gtdda`.
+1. Create a 'plan.md' file in `<project_root>/.blaikistall`.
 2. Select the TDD agent and prompt "red". This enters the red phase.
 3. (Optional) Check contents of handover_prompt.md.
 4. Select "Start implementation" to trigger the developer agent.
