@@ -23,3 +23,4 @@
 - No shortcuts or direction changes without permission. Ask with❓emoji when changing course.
 - If you need to ask me several questions, show me a numbered list of these questions and then start asking one question at a time.
 - When you show me a potential error or miss, start your response with❗️emoji and then explain the issue.
+- Before requesting approval to run, or running, any shell command or command-like check, briefly state the exact command (or planned command sequence) and its purpose. For follow-up commands, explain their purpose too. If the command or its effects change, pause and get approval again when required. Explicitly remind me if a command is going to change or create data, files, commits etc.
